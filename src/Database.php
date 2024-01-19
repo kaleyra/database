@@ -618,11 +618,8 @@ class Database
         $page   = $_REQUEST['page'];
         $dlimit = $_REQUEST['limit'];
 
-        $page = ($params['page'] && is_numeric($params['page']))
-        ? $params['page']
-        : (!empty($page) && is_numeric($page)
-        ? $page
-        : 1);
+        $pageNo = !empty($page) && is_numeric($page) ? $page : 1;
+        $page   = ($params['page'] && is_numeric($params['page'])) ? $params['page'] : $pageNo;
 
         $limit = $params['limit'];
 
