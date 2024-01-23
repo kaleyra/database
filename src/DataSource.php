@@ -197,7 +197,8 @@ class DataSource
 
     protected function table($name)
     {
-        return str_replace('#__', $this->prefix, $name);
+        $prefix = $this->prefix ?: $this->config['prefix'];
+        return str_replace('#__', $prefix, $name);
     }
 
     /**
